@@ -2,6 +2,7 @@ package tallermecanico;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import jdk.nashorn.internal.objects.NativeNumber;
 
 public class Tallermecanico {
 
@@ -15,19 +16,31 @@ public class Tallermecanico {
         id++;
         idtrabajo.add(id);
         descripciondeltrabajo.add(descripcion);
+        preciomaterial.add(1000);
+        numerohoras.add(234);
     }
 
-    //funcion para actualizar los trabajos
+    //funcion para consultar los trabajos
     private static String actualizartrabajos() {
         System.out.println("introduce el id del trabajo realizado");
         Scanner entrada = new Scanner(System.in);
         int identificacion = entrada.nextInt();
         String mensaje = "";
-
+        int horas;
+        int material;
+        String descripcion="";
+        
         if (idtrabajo.contains(identificacion)) {
-
-            return mensaje = "hola que ase cabron";
-
+            horas=numerohoras.get(identificacion);
+            material=preciomaterial.get(identificacion);
+            descripcion=descripciondeltrabajo.get(identificacion);
+            id=identificacion;
+            String p =Integer.toString(material);
+             String h =Integer.toString(horas);
+            String i =Integer.toString(id);
+            return h+" "+p+" "+i+" "+descripcion;
+            
+            
         } else {
 
             return mensaje = "nada de nada";
